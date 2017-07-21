@@ -1,31 +1,106 @@
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>GIT과 Source Tree 사용법 이해</title>
-    </head>
-    <body>
-        <header>
-            <h1>Git과 GitHub, Source Tree 관계를 이해해야 한다</h1>
-        </header>
-        <ul>
-            <li>sync.egoing</li>
-            <li>introduce Git</li>
-            <li>version</li>
-            <li>Branch</li>
-            <li>브랜치</li>
-            <li>충돌</li>
-            <li>충돌해결</li>
-            <li>원격저장소</li>
-            <li>push</li>
-            <li>pull</li>
-            <li>협업</li>
-            <li>sync</li>
-            <li>push.egoing</li>
-            <li>pull.leezche</li>
-            <li>conflict.egoing.leezche</li>
-            <li>외부도구.master</li>
-            <li>스테시</li>
-            <li>ignore</li>
-        </ul>
-    </body>
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Emmet 사용법</title>
+</head>
+<body>
+
+      <header>
+          <h1>Emmet Syntax와 결과값 확인</h1>
+      </header>
+
+      <!-- h3>{nav#navId>ul>(li>a.[href="http://www.sololearn.com" target="_blank"])*4}
+           실수로 a.을 찍었더니 class자리도 추가되는군 -->
+        <h3>Syntax : nav#navId>ul>(li>a.[href="http://www.sololearn.com" target="_blank"])*4</h3>
+        <nav id="navId">
+          <ul>
+            <li><a href="http://www.sololearn.com" class="" target="_blank">Link1</a></li>
+            <li><a href="http://www.sololearn.com" class="" target="_blank">Link2</a></li>
+            <li><a href="http://www.sololearn.com" class="" target="_blank">Link3</a></li>
+            <li><a href="http://www.sololearn.com" class="" target="_blank">Link4</a></li>
+           </ul>
+        </nav>
+
+      <!-- h3>{nav#navId>ul>(li>a[href="http://www.sololearn.com" target="_blank"])*4}
+           Dot를 뺀 것과 비교 -->
+        <h3>Syntax : nav#navId>ul>(li>a[href="http://www.sololearn.com" target="_blank"])*4</h3>
+        <h3>Dot를 뺀 것과 위 결과 비교</h3>
+         <nav id="navId">
+           <ul>
+             <li><a href="http://www.sololearn.com" target="_blank">Link1</a></li>
+             <li><a href="http://www.sololearn.com" target="_blank">Link2</a></li>
+             <li><a href="http://www.sololearn.com" target="_blank">Link3</a></li>
+             <li><a href="http://www.sololearn.com" target="_blank">Link4</a></li>
+           </ul>
+         </nav>
+
+         <!-- li>a>{텍스트 입력} -->
+         <h3>Syntax : li>a>{텍스트 입력, href 값 미지정시 현재 사이트의 Default로 링크됨}</h3>
+         <li><a href="">텍스트 입력</a></li>
+
+         <!-- ul>li.item$*5   일련번호 숫자 삽입은 $만 추가하면 됨 -->
+         <h3>Syntax : ul>li.item$*5 일련번호 숫자 삽입은 $ Sign만 추가하면 됨</h3>
+         <ul>
+           <li class="item1"></li>
+           <li class="item2"></li>
+           <li class="item3"></li>
+           <li class="item4"></li>
+           <li class="item5"></li>
+         </ul>
+
+         <!-- li>a[href="http://www.emmet.org/" target="_blank"]>{텍스트 입력} -->
+         <h3>Syntax : li>a[href="http://www.emmet.org/" target="_blank"]>{텍스트 입력}</h3>
+         <li><a href="https://docs.emmet.io/abbreviations/syntax/" target="_blank">숫자 자동 증가, 자기만의 반복 코드 단축키로 만드는 방법은 Emmet Syntax를 보라.</a></li>
+
+         <!-- a{click}+b{here} -->
+         <h3>Syntax : a{click }+b{here}</h3>
+         <a href="">click </a><b>here</b>
+
+         <!-- a>{click}+b{here}+{ to continue} -->
+         <h3>Syntax : a>{click }+b{here}+{ to continue}</h3>
+         <a href="">click <b>here</b> to continue</a>
+
+         <!-- h3>{Emmet은 CSS도 지원한다!} -->
+         <div>
+           <h3>Syntax : div>li>a[href="https://docs.emmet.io/css-abbreviations/" target="_blank"]h3>{Emmet은 CSS도 지원한다!}</h3>
+           <div>
+             <li><a href="https://docs.emmet.io/css-abbreviations/" target="_blank">Emmet은 CSS도 지원한다!</a></li>
+           </div>
+         </div>
+
+         <div>
+           <!-- div>h3>{Emmet의 자주 쓰는 단축키(Cheat Key)} -->
+           <h3>Syntax : div>li>a[href="https://docs.emmet.io/cheat-sheet/" target="_blank"]h3>{자주 쓰는 단축키 모음(Cheat Key)}</h3>
+           <div>
+             <li><a href="https://docs.emmet.io/cheat-sheet/" target="_blank">자주 쓰는 단축키 모음(Cheat Key)</a></li>
+           </div>
+
+           <h3>Syntax : ul>(li>a[href="http://www.sololearn.com" target="_blank"]{Link $})*4</h3>
+           <ul>
+             <li><a href="http://www.sololearn.com" target="_blank">Link 1</a></li>
+             <li><a href="http://www.sololearn.com" target="_blank">Link 2</a></li>
+             <li><a href="http://www.sololearn.com" target="_blank">Link 3</a></li>
+             <li><a href="http://www.sololearn.com" target="_blank">Link 4</a></li>
+           </ul>
+
+           <!-- div#page>div.logo+ul#navigation>a{Link $}li*5 -->
+           <h3>div#page>div.logo+ul#navigation>a{Link $}li*5</h3>
+           ...can be expanded into :
+
+           <div id="page">
+             <div class="logo"></div>
+             <ul id="navigation">
+               <a href="">Link 1</a>
+               <a href="">Link 2</a>
+               <a href="">Link 3</a>
+               <a href="">Link 4</a>
+               <a href="">Link 5</a>
+             </ul>
+           </div>
+
+         <br><br><br><br><br><br>
+</body>
 </html>
