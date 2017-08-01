@@ -1,0 +1,10 @@
+2017. 8.1 Git Gui 테스트(C:\Users\Dell\Documents\GitHub\gitMy1stProject)
+워킹 카피 존에서 작업 후 
+(1) Git Gui : Rescan(F5)
+(2) Stage To Commit(Ctrl + T)
+(3) Commit with message(Ctrl + Return)
+    --> 아직 원격저장소로 직접 파일이 올라가진 않았다.
+(4) Push(Ctrl + P)
+    --> Push를 해야 올라간다. 성공(Success)!
+
+
