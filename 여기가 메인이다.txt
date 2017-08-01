@@ -1,10 +1,20 @@
 2017. 8.1 Git Gui 테스트(C:\Users\Dell\Documents\GitHub\gitMy1stProject)
 워킹 카피 존에서 작업 후 
-(1) Git Gui : Rescan(F5)
-(2) Stage To Commit(Ctrl + T)
-(3) Commit with message(Ctrl + Return)
-    --> 아직 원격저장소로 직접 파일이 올라가진 않았다.
-(4) Push(Ctrl + P)
-    --> Push를 해야 올라간다. 성공(Success)!
+
+이걸 주 Repository로 한다.
+1. 
+	(1) Git Gui : Rescan(F5)
+	(2) Stage To Commit(Ctrl + T)
+	(3) Commit with message(Ctrl + Return)
+	    --> 아직 원격저장소로 직접 파일이 올라가진 않았다.
+	(4) Push(Ctrl + P)
+	    --> Push를 해야 올라간다. 성공(Success)!
+
+2. C:\Users\Dell\Documents\0. Java, IDE, Linux, C++ 등 Project\MyGitHub_Repository
+이건 사용하지 않는다. 소스 중복 관리 불편
+
+3. C:\Users\Dell\Documents\GitHub\Nexus7_GitHub_Repository
+이건 보조 Repository로 두고 테스트 겸 계속 사용한다.
+
 
 
