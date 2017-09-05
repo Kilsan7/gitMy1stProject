@@ -1,0 +1,103 @@
+/*****************************************
+* My 6th swift code example
+* Initialization
+*****************************************/
+
+/* Init keyword를 사용한다.
+The process of preparing an instance of a class, structure, or enumeration for use is called initialization.
+Classes and structures must set all of their stored properties to an appropriate initial value prior to creation of an instance.
+ In its simplest form, an initializer is like an instance method with no parameters, and is written using the init keyword:
+*/
+struct Fahrenheit {
+   var temp: Double
+   init() {
+     temp = 32.0
+   }
+}
+var f = Fahrenheit()
+
+struct Celsius {
+  var tempInCelsius: Double
+  init(fromFahrenheit fahrenheit: Double) {
+    tempInCelsius = (fahrenheit - 32.0) / 1.8
+  }
+  init(fromKelvin kelvin: Double) {
+    tempInCelsius = kelvin - 273.15
+  }
+}
+let boilingPoint = Celsius(fromFahrenheit: 212.0)
+let freezingPoint = Celsius(fromKelvin: 273.15)
+/*
+The example above defines a structure called Celsius, which implements two custom initializers called init(fromFahrenheit:) and init(fromKelvin:). This initializes a new instance of the structure with a value from a different temperature scale.
+*/
+/*
+When you assign a default value to a stored property, or set its initial value within an initializer, the value of that property is set directly, without calling any property observers.
+*/
+
+/* Structure type의 경우 디폴트 값이 없어도 Swift가 초기값을 넣어준다.
+In the case of structure types that have no defined custom initializers, Swift automatically provides a memberwise initializer, even if the structure types have stored properties that do not have default values.
+The Size structure automatically receives an init(width:height:) memberwise initializer, which you can use to initialize a new Size instance:
+*/
+struct Size {
+  var width = 0.0, height = 0.0
+}
+let twoByTwo = Size(width: 2.0, height: 2.0)
+//출력해보자
+print("Size Structure의 twoByTwo Size(width)는 : \(twoByTwo.width)\n")
+
+/* Sturcture와 달리 Class는 반드시 초기화할 때 초기값을 넣어줘야 한다.
+Class Initialization
+All stored properties of a class - including any properties inherited from its superclass - must be assigned an initial value during initialization. In other words, assign a default value or create an initializer for the properties of the class.
+The structure from the above example would have the following form as a class with an initializer:
+*/
+class SizeClass {
+  var width:Double, height:Double
+  init(w:Double, h:Double) {
+    width = w
+    height = h
+  }
+}
+let twoByTwo2 = SizeClass(w: 3.0, h: 5.0)
+//출력해보자
+print("SizeClass의 twoByTwo2 Size(width)는 : \(twoByTwo2.width)\n")
+print("SizeClass의 twoByTwo2 Size(height)는 : \(twoByTwo2.height)\n")
+
+/* Subclass에서 반드시 초기화해야 하는 경우, Required라는 keyword를 class initializer 앞에 써준다.
+Required Initializers
+
+Write the required modifier before the definition of a class initializer to indicate that every subclass of the class must implement that initializer:
+*/
+class SomeClass {
+   required init() {
+     // initializer implementation goes here
+   }
+}
+
+/* Subclass에서도 Required라는 modifier를 써준다. 계속 하위클래스가 상속할 수도 있기 때문...
+   Required 자리에 Override modifier를 쓰면 안 된다.
+
+You must also insert the required modifier before every subclass implementation of a required initializer. This indicates that the initializer requirement applies to further subclasses along the chain. Do not write the override modifier when overriding a required designated initializer:
+*/
+class SomeSubclass: SomeClass {
+   required init() {
+     // subclass implementation goes here
+   }
+}
+/* 참고 : It's not necessary to provide an explicit implementation of a required initializer if you can satisfy the requirement with an inherited initializer. */
+
+/* Deinitialization
+
+Superclass deinitializers are inherited by their subclasses, and the superclass deinitializer is called automatically at the end of a subclass deinitializer implementation. Superclass deinitializers are always called, even in cases in which subclasses do not provide their own deinitializers.
+
+The deinit keyword is used to write a deinitializer, which is similar to writing an initializer using the init keyword. 
+The deinitializer does not take any parameters and is written with no parentheses:
+*/
+class SomeClass2 {
+   required init() {
+     // initializer implementation goes here
+   }
+   deinit {
+      // perform the deinitialization
+   }
+}
+/* Cf : Deinitializers are only available on class types. */

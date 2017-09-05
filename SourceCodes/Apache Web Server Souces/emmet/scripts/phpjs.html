@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScript</h1>  
+  <script>
+    document.write("<p>10+20 결과</p>");
+    document.write(10+20);    //개행을 하려면 +"<p></p>" 추가해야 함
+    document.write("<p>\"10\"+\"20\" 결과</p>");
+    document.write("10"+"20");
+  </script>
+  <p></p>
+  <h1>php</h1>
+  <?php
+    echo "This is a php code!";
+    echo "<p></p>";
+  ?>
+  <?php
+    echo "Hello World!";
+    echo "<p>10+20 실행</p>";
+    echo 10+20;
+    echo "<p>\"10+\"20\" 실행</p>";
+    echo "10"+"20";          // php에선 +도 숫자로 변환하여 계산한다. 친절도 하셔라.
+    echo "<p>\"10\".\"20\" 실행</p>";
+    echo "10"."20";          // php에서 문자열 Concatenating 방법(.을 이용한다.)
+  ?>
+  <p></p>
+</body>
+</html>
